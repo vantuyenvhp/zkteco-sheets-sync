@@ -1,8 +1,8 @@
 name: ZKTeco Auto Sync
 on:
   schedule:
-    # Chạy vào 7:50 sáng giờ Việt Nam (tương đương 00:50 giờ quốc tế UTC)
-    - cron: '50 0 * * *'
+    # Chạy vào 8:00 sáng giờ Việt Nam (tương đương 01:00 giờ quốc tế UTC)
+    - cron: '0 1 * * *'
   workflow_dispatch: # Cho phép bạn bấm nút "Run" thủ công để kiểm tra bất cứ lúc nào
 jobs:
   build:
