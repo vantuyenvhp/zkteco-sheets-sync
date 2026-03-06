@@ -1,0 +1,21 @@
+name: ZKTeco Auto Sync
+on:
+  schedule:
+    # Chạy vào 7:50 sáng giờ Việt Nam (tương đương 00:50 giờ quốc tế UTC)
+    - cron: '50 0 * * *'
+  workflow_dispatch: # Cho phép bạn bấm nút "Run" thủ công để kiểm tra bất cứ lúc nào
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Execute Python script
+        run: python main.py
